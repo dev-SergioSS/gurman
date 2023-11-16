@@ -708,6 +708,7 @@ main {
   display: flex;
   gap: 10vw;
   align-items: flex-end;
+  position: relative;
 }
 
 .partnership__row_1 .partnership__media {
@@ -779,6 +780,22 @@ main {
 
 .partnership__text p {
   line-height: 110%;
+}
+
+.partnership__piece {
+  position: absolute;
+  display: none;
+  right: -7vw;
+}
+
+.partnership__piece-1 {
+  width: 20.5vw;
+  bottom: 10vw;
+}
+
+.partnership__piece-3 {
+  width: 30vw;
+  bottom: -15vw;
 }
 
 @media (max-width: 998px) {
@@ -1051,7 +1068,7 @@ main {
   }
 
   .partnership__rows {
-    gap: 16vw;
+    gap: 14.5vw;
   }
 
   .partnership__row {
@@ -1066,6 +1083,10 @@ main {
 
   .partnership__row_1 .partnership__media-obj {
     bottom: -19.5vw;
+  }
+
+  .partnership__row_2 {
+    margin-top: 0;
   }
 
   .partnership__row_2 .partnership__media {
@@ -1083,6 +1104,7 @@ main {
 
   .partnership__row_3 .partnership__media-obj {
     bottom: -11.5vw;
+    left: 10vw;
   }
 
   .partnership__row_3 .partnership__text {
@@ -1096,9 +1118,18 @@ main {
 
   .partnership__text {
     max-width: none;
+    padding-bottom: 0;
   }
 
   .partnership__text h3 {
     font-size: 1.6rem;
+  }
+
+  .partnership__text p {
+    max-width: 74vw;
+  }
+
+  .partnership__piece {
+    display: block;
   }
 }
