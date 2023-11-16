@@ -16,15 +16,21 @@ let storesSlider = new Swiper('.stores__slider', {
 })
 
 let productsSlider = new Swiper('.products__slider', {
-  slidesPerView: 'auto',
+  slidesPerView: 5.5,
   centeredSlides: true,
-  speed: 500,
+  slidesPerGroup: 1,
+  speed: 400,
   loop: true,
   loopAdditionalSlides: 4,
   // autoplay: {
   //   delay: 1,
   // },
   allowTouchMove: true,
+
+  navigation: {
+    nextEl: '.products__slider-btn-next',
+    prevEl: '.products__slider-btn-prev',
+  },
 
   breakpoints: {
     // 576: {
