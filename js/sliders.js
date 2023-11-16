@@ -16,7 +16,7 @@ let storesSlider = new Swiper('.stores__slider', {
 })
 
 let productsSlider = new Swiper('.products__slider', {
-  slidesPerView: 5.5,
+  slidesPerView: 1.8,
   centeredSlides: true,
   slidesPerGroup: 1,
   speed: 400,
@@ -33,8 +33,8 @@ let productsSlider = new Swiper('.products__slider', {
   },
 
   breakpoints: {
-    // 576: {
-    //   spaceBetween: 42,
-    // },
+    768: {
+      slidesPerView: 5.5,
+    },
   },
 })

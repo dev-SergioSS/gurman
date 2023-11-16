@@ -605,13 +605,14 @@ main {
 .products__text {
   text-align: center;
   margin-bottom: 3.3vw;
+  padding: 0 4vw;
 }
 
 .products__slider {
   overflow: hidden;
-  border: 1px solid blue;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .products__slider-nav {
@@ -898,7 +899,7 @@ main {
     font-size: 1.38rem;
   }
 
-  .button_order {
+  .button {
     background-color: #BF1822;
     border-color: #E1B562;
     min-width: 72vw;
@@ -1058,8 +1059,68 @@ main {
     max-width: none;
   }
 
+  .products {
+    padding: 23vw 0 0;
+  }
+
+  .products__text {
+    margin-bottom: 16vw;
+  }
+
+  .products__slider-btn {
+    position: absolute;
+    height: 74vw;
+    width: 20vw;
+    bottom: 30vw;
+    z-index: 5;
+    opacity: 0;
+  }
+
+  .products__slider-btn-prev {
+    left: 0;
+  }
+
+  .products__slider-btn-next {
+    right: 0;
+  }
+
+  .products .swiper-wrapper {
+    min-height: 129vw;
+    position: relative;
+    top: -5vw;
+  }
+
+  .products__item {
+    left: 0;
+    opacity: 0.59;
+    -webkit-filter: blur(3.32px);
+            filter: blur(3.32px);
+  }
+
+  .products__item.swiper-slide-active {
+    opacity: 1;
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+
+  .products__item.swiper-slide-active img {
+    height: 92vw;
+  }
+
+  .products__item.swiper-slide-active ~ .swiper-slide {
+    left: 0;
+  }
+
+  .products__item img {
+    height: 73.6vw;
+  }
+
+  .products__item h3 {
+    font-size: 0.92rem;
+  }
+
   .partnership {
-    padding: 16vw 0;
+    padding: 0 0 16vw;
   }
 
   .partnership__title {
