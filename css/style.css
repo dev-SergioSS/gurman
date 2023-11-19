@@ -251,6 +251,7 @@ main {
   display: flex;
   align-items: center;
   overflow: hidden;
+  z-index: 105;
 }
 
 .header__top-info span {
