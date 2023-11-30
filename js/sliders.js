@@ -12,12 +12,16 @@ let headerRow = new Swiper('.header__top-info-slider', {
 let storesSlider = new Swiper('.stores__slider', {
   slidesPerView: 'auto',
   centeredSlides: true,
-  speed: 5000,
+  speed: 2000,
   loop: true,
   autoplay: {
-    delay: 1,
+    delay: 0,
   },
-  allowTouchMove: true,
+  grabCursor: true,
+  freemode: true,
+  // mousewheel: {
+  //   forceToAxis: true,
+  // },
 })
 
 let productsSlider = new Swiper('.products__slider', {
@@ -25,7 +29,7 @@ let productsSlider = new Swiper('.products__slider', {
   slidesPerView: 1.8,
   centeredSlides: true,
   slidesPerGroup: 1,
-  speed: 300,
+  speed: 500,
   loop: true,
   loopAdditionalSlides: 4,
   on: {
@@ -50,6 +54,7 @@ let productsSlider = new Swiper('.products__slider', {
     768: {
       slidesPerView: 5.5,
       initialSlide: 0,
+      speed: 300,
     },
   },
 })

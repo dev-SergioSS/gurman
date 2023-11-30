@@ -43,6 +43,8 @@ menuLink.forEach(function (link) {
   link.setAttribute('data-text', linkText)
 })
 
+// ---- mobile row menu
+
 const mobileHeader = document.querySelector('.header__mobile-row')
 
 mobileHeader.addEventListener('click', (e) => {
@@ -53,20 +55,16 @@ mobileHeader.addEventListener('click', (e) => {
     body.classList.add('lock')
     header.classList.add('is-contacts')
     return
-  }
-  if (e.target.closest('.header.is-menu')) {
-    removeMenu()
-  }
-  if (e.target.closest('.header.is-contacts')) {
+  } else {
     removeMenu()
   }
 })
 
-const btnCloseContacts = document.querySelector(
-  '.header__popup-contacts-btn-close'
-)
-btnCloseContacts.addEventListener('click', () => {
-  removeMenu
+const btnCloseContacts = document.querySelectorAll('.header__popup-btn-close')
+btnCloseContacts.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    removeMenu()
+  })
 })
 
 // -- form
@@ -115,4 +113,20 @@ window.addEventListener('scroll', function () {
   } else preloaderEl.classList.remove('fixed')
 })
 
-// -----
+// ----- webp
+
+function testWebP(callback) {
+  var webP = new Image()
+  webP.onload = webP.onerror = function () {
+    callback(webP.height == 2)
+  }
+  webP.src =
+    'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA'
+}
+testWebP(function (support) {
+  if (support === true) {
+    document.querySelector('html').classList.add('webp')
+  } else {
+    document.querySelector('html').classList.add('no-webp')
+  }
+})

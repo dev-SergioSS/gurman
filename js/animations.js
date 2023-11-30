@@ -56,27 +56,43 @@ if (widthWindow > 768) {
 
 //  ------ benefits
 
-gsap.from('.benefits__title', {
-  scrollTrigger: {
-    trigger: '.benefits__title',
-    start: '50% top',
-  },
-  yPercent: -300,
-  opacity: 0,
-  duration: 0.7,
-})
-gsap.from('.benefits__items li', {
-  scrollTrigger: {
-    trigger: '.benefits__title',
-    start: '30% top',
-  },
-
-  opacity: 0,
-  stagger: 0.3,
+gsap.set('.benefits__items li', { opacity: 0 })
+const benefitsItems = gsap.to('.benefits__items li', {
+  opacity: 1,
+  stagger: 0.4,
   duration: 0.4,
   ease: 'power2.out',
-  delay: 0.9,
+  delay: 0.6,
+  paused: true,
 })
+
+if (widthWindow > 768) {
+  gsap.from('.benefits__title', {
+    scrollTrigger: {
+      trigger: '.benefits__title',
+      start: 'top 50%',
+    },
+    yPercent: -300,
+    opacity: 0,
+    duration: 0.7,
+    onComplete: function () {
+      benefitsItems.play()
+    },
+  })
+} else {
+  gsap.from('.benefits__title', {
+    scrollTrigger: {
+      trigger: '.hero',
+      start: 'bottom 40%',
+    },
+    yPercent: -300,
+    opacity: 0,
+    duration: 0.7,
+    onComplete: function () {
+      benefitsItems.play()
+    },
+  })
+}
 
 //  ----- target
 
@@ -92,6 +108,7 @@ gsap.from('.target__title', {
     targetText.play()
   },
 })
+
 const targetText = gsap.from('.target__text p', {
   opacity: 0,
   duration: 0.5,
@@ -99,58 +116,63 @@ const targetText = gsap.from('.target__text p', {
   delay: 0.2,
 })
 
-gsap.from('.target__media', {
-  scrollTrigger: {
-    trigger: '.target__media',
-    start: 'top 50%',
-  },
-  opacity: 0,
-  duration: 0.1,
-  onComplete: function () {
-    targetImg4.play()
-    targetImg5.play()
-    targetImg1.play()
-    targetImg2.play()
-    targetImg3.play()
-  },
-})
+if (widthWindow > 768) {
+  gsap.from('.target__media', {
+    scrollTrigger: {
+      trigger: '.target__media',
+      start: 'top 50%',
+    },
+    opacity: 0,
+    duration: 0.01,
+    onComplete: function () {
+      targetImg4.play()
+      targetImg5.play()
+      targetImg1.play()
+      targetImg2.play()
+      targetImg3.play()
+    },
+  })
 
-let targetImg4 = gsap.from('.target__img_4', {
-  paused: true,
-  duration: 1.3,
-  yPercent: -200,
-})
-let targetImg5 = gsap.from('.target__img_5', {
-  paused: true,
-  duration: 1.3,
-  yPercent: -200,
-})
-let targetImg1 = gsap.from('.target__img_1', {
-  paused: true,
-  duration: 1.3,
-  yPercent: -200,
-})
-let targetImg2 = gsap.from('.target__img_2', {
-  paused: true,
-  yPercent: -300,
-  duration: 1.3,
-})
-let targetImg3 = gsap.from('.target__img_3', {
-  paused: true,
-  yPercent: -300,
-  duration: 1.3,
-  delay: 0.05,
-  onComplete: function () {
-    targetVegetables.play()
-  },
-})
+  const pos1 = -80
+  const pos2 = -120
 
-const targetVegetables = gsap.from('.target .target__vegetable', {
-  opacity: 0,
-  duration: 1.3,
-  paused: true,
-  delay: 0.2,
-})
+  let targetImg4 = gsap.from('.target__img_4', {
+    paused: true,
+    duration: 1,
+    yPercent: pos1,
+  })
+  let targetImg5 = gsap.from('.target__img_5', {
+    paused: true,
+    duration: 1,
+    yPercent: pos1,
+  })
+  let targetImg1 = gsap.from('.target__img_1', {
+    paused: true,
+    duration: 1,
+    yPercent: pos1,
+  })
+  let targetImg2 = gsap.from('.target__img_2', {
+    paused: true,
+    yPercent: pos1,
+    duration: 1,
+  })
+  let targetImg3 = gsap.from('.target__img_3', {
+    paused: true,
+    yPercent: pos1,
+    duration: 1,
+    delay: 0.05,
+    onComplete: function () {
+      targetVegetables.play()
+    },
+  })
+
+  const targetVegetables = gsap.from('.target .target__vegetable', {
+    opacity: 0,
+    duration: 1.3,
+    paused: true,
+    delay: 0.2,
+  })
+}
 
 // ------ history
 
@@ -172,47 +194,49 @@ const historyText = gsap.from('.history__text p', {
   paused: true,
 })
 
-gsap.from('.history__media', {
-  scrollTrigger: {
-    trigger: '.history__media',
-    start: 'top 50%',
-  },
-  opacity: 0,
-  duration: 0.1,
-  onComplete: function () {
-    historyImg1.play()
-    historyImg2.play()
-    historyImg3.play()
-  },
-})
+if (widthWindow > 768) {
+  gsap.from('.history__media', {
+    scrollTrigger: {
+      trigger: '.history__media',
+      start: 'top 50%',
+    },
+    opacity: 0,
+    duration: 0.01,
+    onComplete: function () {
+      historyImg1.play()
+      historyImg2.play()
+      historyImg3.play()
+    },
+  })
 
-let historyImg1 = gsap.from('.history__img_1', {
-  paused: true,
-  duration: 1.3,
-  yPercent: -300,
-  delay: 0.08,
-})
-let historyImg2 = gsap.from('.history__img_2', {
-  paused: true,
-  duration: 1.3,
-  yPercent: -200,
-})
-let historyImg3 = gsap.from('.history__img_3', {
-  paused: true,
-  duration: 1.3,
-  yPercent: -250,
-  delay: 0.05,
-})
+  let historyImg1 = gsap.from('.history__img_1', {
+    paused: true,
+    duration: 1,
+    yPercent: -120,
+    delay: 0.08,
+  })
+  let historyImg2 = gsap.from('.history__img_2', {
+    paused: true,
+    duration: 1,
+    yPercent: -80,
+  })
+  let historyImg3 = gsap.from('.history__img_3', {
+    paused: true,
+    duration: 1,
+    yPercent: -100,
+    delay: 0.05,
+  })
+}
 
 // ------- partnership
 
-let partnershipPoint = 'center'
+let partnershipPoint = 'top'
 
 if (widthWindow <= 768) partnershipPoint = 'top'
 
 gsap.from('.partnership__row_1 .partnership__media', {
   scrollTrigger: {
-    trigger: '.partnership__row_1',
+    trigger: '.partnership__title',
     start: `${partnershipPoint} center`,
   },
   yPercent: -100,
@@ -271,7 +295,7 @@ const partnershipObj3 = gsap.from(
   }
 )
 
-// ----- header
+// ----- preloader
 
 gsap.set('#logo-form', {
   scale: 30,
