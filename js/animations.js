@@ -17,8 +17,6 @@ if (widthWindow > 768) {
     }
   })
 
-  // setInterval(() => {}, 7_000)
-
   let heroLightMove = gsap.from('.hero__products-light', {
     xPercent: -640,
     duration: 0.8,
@@ -56,53 +54,56 @@ if (widthWindow > 768) {
 
 //  ------ benefits
 
+let startBenefits = 'bottom 40%'
+let delayBenefits = 0.1
+
+if (widthWindow > 768) {
+  startBenefits = 'top 50%'
+  delayBenefits = 0.6
+}
+
 gsap.set('.benefits__items li', { opacity: 0 })
 const benefitsItems = gsap.to('.benefits__items li', {
   opacity: 1,
   stagger: 0.4,
   duration: 0.4,
   ease: 'power2.out',
-  delay: 0.6,
+  delay: delayBenefits,
   paused: true,
 })
 
-if (widthWindow > 768) {
-  gsap.from('.benefits__title', {
-    scrollTrigger: {
-      trigger: '.benefits__title',
-      start: 'top 50%',
-    },
-    yPercent: -300,
-    opacity: 0,
-    duration: 0.7,
-    onComplete: function () {
-      benefitsItems.play()
-    },
-  })
-} else {
-  gsap.from('.benefits__title', {
-    scrollTrigger: {
-      trigger: '.hero',
-      start: 'bottom 40%',
-    },
-    yPercent: -300,
-    opacity: 0,
-    duration: 0.7,
-    onComplete: function () {
-      benefitsItems.play()
-    },
-  })
-}
+gsap.from('.benefits__title', {
+  scrollTrigger: {
+    trigger: '.hero',
+    start: 'bottom 40%',
+  },
+  yPercent: -300,
+  opacity: 0,
+  duration: 0.7,
+  onComplete: function () {
+    benefitsItems.play()
+  },
+})
 
 //  ----- target
+
+let startText = '70%'
+let durationText = 0.65
+let delayText = 0
+
+if (widthWindow > 768) {
+  startText = '40%'
+  durationText = 0.8
+  delayText = 0.2
+}
 
 gsap.from('.target__title', {
   scrollTrigger: {
     trigger: '.target__title',
-    start: 'top 40%',
+    start: `top ${startText}`,
   },
   xPercent: -50,
-  duration: 0.8,
+  duration: durationText,
   opacity: 0,
   onComplete: function () {
     targetText.play()
@@ -113,7 +114,7 @@ const targetText = gsap.from('.target__text p', {
   opacity: 0,
   duration: 0.5,
   paused: true,
-  delay: 0.2,
+  delay: delayText,
 })
 
 if (widthWindow > 768) {
@@ -122,8 +123,8 @@ if (widthWindow > 768) {
       trigger: '.target__media',
       start: 'top 50%',
     },
-    opacity: 0,
-    duration: 0.01,
+    // opacity: 0.01,
+    // duration: 0,
     onComplete: function () {
       targetImg4.play()
       targetImg5.play()
@@ -139,27 +140,32 @@ if (widthWindow > 768) {
   let targetImg4 = gsap.from('.target__img_4', {
     paused: true,
     duration: 1,
+    opacity: 0,
     yPercent: pos1,
   })
   let targetImg5 = gsap.from('.target__img_5', {
     paused: true,
     duration: 1,
+    opacity: 0,
     yPercent: pos1,
   })
   let targetImg1 = gsap.from('.target__img_1', {
     paused: true,
     duration: 1,
+    opacity: 0,
     yPercent: pos1,
   })
   let targetImg2 = gsap.from('.target__img_2', {
     paused: true,
     yPercent: pos1,
     duration: 1,
+    opacity: 0,
   })
   let targetImg3 = gsap.from('.target__img_3', {
     paused: true,
     yPercent: pos1,
     duration: 1,
+    opacity: 0,
     delay: 0.05,
     onComplete: function () {
       targetVegetables.play()
@@ -179,10 +185,10 @@ if (widthWindow > 768) {
 gsap.from('.history__title', {
   scrollTrigger: {
     trigger: '.history__title',
-    start: 'top 40%',
+    start: `top ${startText}`,
   },
   xPercent: -50,
-  duration: 0.8,
+  duration: durationText,
   opacity: 0,
   onComplete: function () {
     historyText.play()
@@ -192,6 +198,7 @@ const historyText = gsap.from('.history__text p', {
   opacity: 0,
   duration: 0.5,
   paused: true,
+  delay: delayText,
 })
 
 if (widthWindow > 768) {
@@ -211,20 +218,21 @@ if (widthWindow > 768) {
 
   let historyImg1 = gsap.from('.history__img_1', {
     paused: true,
-    duration: 1,
-    yPercent: -120,
-    delay: 0.08,
+    duration: 0.72,
+    yPercent: -100,
+    ease: 'power1.out',
   })
   let historyImg2 = gsap.from('.history__img_2', {
     paused: true,
-    duration: 1,
-    yPercent: -80,
+    duration: 0.7,
+    ease: 'power1.out',
+    yPercent: -100,
   })
   let historyImg3 = gsap.from('.history__img_3', {
     paused: true,
-    duration: 1,
+    duration: 0.71,
+    ease: 'power1.out',
     yPercent: -100,
-    delay: 0.05,
   })
 }
 
@@ -296,71 +304,85 @@ const partnershipObj3 = gsap.from(
 )
 
 // ----- preloader
+let sizeLogoForm = 25
+let durationLogoForm = 1
 
-gsap.set('#logo-form', {
-  scale: 30,
+if (widthWindow > 768) {
+  sizeLogoForm = 30
+  durationLogoForm = 1.5
+}
+
+function startPreloader() {
+  gsap.set('#logo-form', {
+    scale: sizeLogoForm,
+  })
+  gsap.set(
+    '.logo-animated .svg-letter, .logo-animated .subtitle, .preloader p, .preloader h1, #bg-black, #bg-gold, .hero__products',
+    {
+      opacity: 0,
+    }
+  )
+
+  let preloader = gsap
+    .timeline()
+    .to('.logo-animated .svg-letter', {
+      opacity: 1,
+      stagger: 0.3,
+      duration: 0.4,
+    })
+    .to('.logo-animated .subtitle', {
+      opacity: 1,
+      duration: 0.4,
+    })
+    .fromTo(
+      '.preloader p',
+      {
+        xPercent: -100,
+        opacity: 0,
+        duration: 0.2,
+      },
+      {
+        xPercent: 0,
+        opacity: 1,
+      }
+    )
+    .fromTo(
+      '.preloader h1',
+      {
+        opacity: 0,
+        duration: 0.1,
+      },
+      {
+        opacity: 1,
+      }
+    )
+    .to('#logo-form', {
+      scale: 1,
+      duration: durationLogoForm,
+      ease: 'power1.out',
+      transformOrigin: 'center 10%',
+      onComplete: function () {
+        gsap.set('.preloader h1, .preloader p,#logo-form', { opacity: 0 })
+      },
+    })
+    .to('#bg-black, #bg-gold', {
+      opacity: 1,
+      duration: 0.3,
+      onComplete: function () {
+        gsap.set('.preloader p, .preloader h1, #logo-form', { opacity: 0 })
+      },
+    })
+    .to('.hero__products', {
+      opacity: 1,
+      duration: 0.5,
+      delay: 0.1,
+      onComplete: function () {
+        body.classList.remove('lock')
+      },
+    })
+}
+// startPreloader()
+
+gsap.set('#bg-black', {
+  scale: 2,
 })
-gsap.set(
-  '.logo-animated .svg-letter, .logo-animated .subtitle, .preloader p, .preloader h1, #bg-black, #bg-gold, .hero__products',
-  {
-    opacity: 0,
-  }
-)
-
-let preloader = gsap
-  .timeline()
-  .to('.logo-animated .svg-letter', {
-    opacity: 1,
-    stagger: 0.3,
-    duration: 0.4,
-  })
-  .to('.logo-animated .subtitle', {
-    opacity: 1,
-    duration: 0.4,
-  })
-  .fromTo(
-    '.preloader p',
-    {
-      xPercent: -100,
-      opacity: 0,
-      duration: 0.2,
-    },
-    {
-      xPercent: 0,
-      opacity: 1,
-    }
-  )
-  .fromTo(
-    '.preloader h1',
-    {
-      opacity: 0,
-      duration: 0.1,
-    },
-    {
-      opacity: 1,
-    }
-  )
-  .to('#logo-form', {
-    scale: 1,
-    duration: 1.5,
-    ease: 'power1.out',
-    transformOrigin: 'center 10%',
-    onComplete: function () {
-      gsap.set('.preloader h1, .preloader p,#logo-form', { opacity: 0 })
-    },
-  })
-  .to('#bg-black, #bg-gold', {
-    opacity: 1,
-    duration: 0.3,
-    onComplete: function () {
-      gsap.set('.preloader p, .preloader h1, #logo-form', { opacity: 0 })
-    },
-  })
-  .to('.hero__products', {
-    opacity: 1,
-    duration: 0.5,
-    delay: 0.1,
-    onComplete: function () {
-      body.classList.remove('lock')
-    },
-  })

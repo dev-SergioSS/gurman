@@ -133,6 +133,12 @@
 				fill="#BF1822" />
 		</svg>
 
+		<div class="preloader__logo-light-wrap">
+			<div class="preloader__logo-light">
+				<span></span><span></span><span></span><span></span>
+			</div>
+		</div>
+
 		<div class="container">
 			<div class="hero__wrap hero__wrap_home">
 				<img src="img/icons/logo.svg" class="hero__logo" alt="logo" />
@@ -240,6 +246,7 @@
 		<h3>HoReCa</h3>
 	</a>
 </div>
+<div class="menu-catalog__bottom"></div>
 
 			<button class="header__popup-btn-close">
 				<img src="img/icons/close-thin.svg" alt="close">
@@ -389,10 +396,12 @@
 							<div class="target__img target__img_4"></div>
 							<div class="target__img target__img_5"></div>
 
-							<picture><source srcset="img/target/vegetable-1.webp" type="image/webp"><img src="img/target/vegetable-1.png" class="target__vegetable target__vegetable_1" /></picture>
-							<picture><source srcset="img/target/vegetable-2.webp" type="image/webp"><img src="img/target/vegetable-2.png" class="target__vegetable target__vegetable_2" /></picture>
-							<picture><source srcset="img/target/vegetable-3.webp" type="image/webp"><img src="img/target/vegetable-3.png" class="target__vegetable target__vegetable_3" /></picture>
-							<picture><source srcset="img/target/vegetable-4.webp" type="image/webp"><img src="img/target/vegetable-4.png" class="target__vegetable target__vegetable_4" /></picture>
+							<div class="target__media-veg">
+								<picture><source srcset="img/target/vegetable-1.webp" type="image/webp"><img src="img/target/vegetable-1.png" class="target__vegetable target__vegetable_1" /></picture>
+								<picture><source srcset="img/target/vegetable-2.webp" type="image/webp"><img src="img/target/vegetable-2.png" class="target__vegetable target__vegetable_2" /></picture>
+								<picture><source srcset="img/target/vegetable-3.webp" type="image/webp"><img src="img/target/vegetable-3.png" class="target__vegetable target__vegetable_3" /></picture>
+								<picture><source srcset="img/target/vegetable-4.webp" type="image/webp"><img src="img/target/vegetable-4.png" class="target__vegetable target__vegetable_4" /></picture>
+							</div>
 						</div>
 						<div class="target__text">
 							<h2 class="target__title title">
@@ -435,7 +444,7 @@
 							<p>Таким чином наші продукти бренду "Гурман" задовольняють очікування найвибагливіших споживачів.</p>
 						</div>
 
-						<picture><source srcset="img/history/vegetable-1.webp" type="image/webp"><img src="img/history/vegetable-1.png" class="history__vegetable history__vegetable_1" /></picture>
+						<picture><source srcset="img/history/vegetable-1-1.webp" type="image/webp"><img src="img/history/vegetable-1-1.png" class="history__vegetable history__vegetable_1" /></picture>
 						<picture><source srcset="img/history/vegetable-2.webp" type="image/webp"><img src="img/history/vegetable-2.png" class="history__vegetable history__vegetable_2" /></picture>
 						<picture><source srcset="img/history/vegetable-3.webp" type="image/webp"><img src="img/history/vegetable-3.png" class="history__vegetable history__vegetable_3" /></picture>
 						<picture><source srcset="img/history/vegetable-4.webp" type="image/webp"><img src="img/history/vegetable-4.png" class="history__vegetable history__vegetable_4" /></picture>
@@ -443,15 +452,21 @@
 				</div>
 			</section>
 
-			<section class="label-block frame">
+			<section class="label-block label-block_bg frame">
 				<div class="container">
 					<div class="label-block__wrap">
-						<h2>Так цінності та старання
+						<h2>Так цінності <br class="mobile"> та старання
 							людей трансформуються <br>
 							в сильні бренди</h2>
 					</div>
 				</div>
-				<picture><source srcset="img/history/vegetable-4.webp" type="image/webp"><img src="img/history/vegetable-4.png" class="label-block__vegetable-1" /></picture>
+				<div class="label-block__video-wrap">
+					<video class="label-block__video" id="myVideo2" playsinline muted loop preload="none">
+						<source src="video/process.webm" type="video/webm">
+						<source src="video/process.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+				</div>
 			</section>
 
 			<section class="products" id="products">
@@ -514,124 +529,10 @@
 	<span><picture><source srcset="img/products/porridges.webp" type="image/webp"><img src="img/products/porridges.png" alt="porridges"></picture></span>
 	<h3>КАШІ</h3>
 </a>
-<a href="product.html" class="products__item swiper-slide products__item_v2">
+<!-- <a href="product.html" class="products__item swiper-slide products__item_v2">
 	<span><picture><source srcset="img/products/horeca.webp" type="image/webp"><img src="img/products/horeca.png" alt="horeca"></picture></span>
 	<h3>HoReCa</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide">
-	<span><picture><source srcset="img/products/sauces.webp" type="image/webp"><img src="img/products/sauces.png" alt="sauces"></picture></span>
-	<h3>СОУСИ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide">
-	<span><picture><source srcset="img/products/chickpeas.webp" type="image/webp"><img src="img/products/chickpeas.png" alt="chickpeas"></picture></span>
-	<h3>ПРОДУКТИ <br>
-		З НУТУ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide">
-	<span><picture><source srcset="img/products/cucumbers.webp" type="image/webp"><img src="img/products/cucumbers.png" alt="cucumbers"></picture></span>
-	<h3>ПРОДУКТИ <br>
-		З ОГІРКІВ</h3>
-</a>
-						<a href="product.html" class="products__item swiper-slide">
-	<span><picture><source srcset="img/products/tomatoes.webp" type="image/webp"><img src="img/products/tomatoes.png" alt="tomatoes"></picture></span>
-	<h3>ПРОДУКТИ <br>
-		З ТОМАТІВ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide">
-	<span><picture><source srcset="img/products/peas.webp" type="image/webp"><img src="img/products/peas.png" alt="peas"></picture></span>
-	<h3>ПРОДУКТИ <br>
-		З ГОРОШКУ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide">
-	<span><picture><source srcset="img/products/zucchini.webp" type="image/webp"><img src="img/products/zucchini.png" alt="zucchini"></picture></span>
-	<h3>ПРОДУКТИ <br>
-		З КАБАЧКІВ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide">
-	<span><picture><source srcset="img/products/beans.webp" type="image/webp"><img src="img/products/beans.png" alt="beans"></picture></span>
-	<h3>ПРОДУКТИ <br>
-		З КВАСОЛІ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide">
-	<span><picture><source srcset="img/products/pepper.webp" type="image/webp"><img src="img/products/pepper.png" alt="pepper"></picture></span>
-	<h3>ПРОДУКТИ <br>
-		З ПЕРЦЮ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide">
-	<span><picture><source srcset="img/products/fruits.webp" type="image/webp"><img src="img/products/fruits.png" alt="fruits"></picture></span>
-	<h3>ПРОДУКТИ <br>
-		З ФРУКТІВ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide products__item_v2">
-	<span><picture><source srcset="img/products/meat.webp" type="image/webp"><img src="img/products/meat.png" alt="meat"></picture></span>
-	<h3>М’ЯСНІ <br>
-		ПРОДУКТИ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide products__item_v2">
-	<span><picture><source srcset="img/products/porridges.webp" type="image/webp"><img src="img/products/porridges.png" alt="porridges"></picture></span>
-	<h3>КАШІ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide products__item_v2">
-	<span><picture><source srcset="img/products/horeca.webp" type="image/webp"><img src="img/products/horeca.png" alt="horeca"></picture></span>
-	<h3>HoReCa</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide">
-	<span><picture><source srcset="img/products/sauces.webp" type="image/webp"><img src="img/products/sauces.png" alt="sauces"></picture></span>
-	<h3>СОУСИ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide">
-	<span><picture><source srcset="img/products/chickpeas.webp" type="image/webp"><img src="img/products/chickpeas.png" alt="chickpeas"></picture></span>
-	<h3>ПРОДУКТИ <br>
-		З НУТУ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide">
-	<span><picture><source srcset="img/products/cucumbers.webp" type="image/webp"><img src="img/products/cucumbers.png" alt="cucumbers"></picture></span>
-	<h3>ПРОДУКТИ <br>
-		З ОГІРКІВ</h3>
-</a>
-						<a href="product.html" class="products__item swiper-slide">
-	<span><picture><source srcset="img/products/tomatoes.webp" type="image/webp"><img src="img/products/tomatoes.png" alt="tomatoes"></picture></span>
-	<h3>ПРОДУКТИ <br>
-		З ТОМАТІВ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide">
-	<span><picture><source srcset="img/products/peas.webp" type="image/webp"><img src="img/products/peas.png" alt="peas"></picture></span>
-	<h3>ПРОДУКТИ <br>
-		З ГОРОШКУ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide">
-	<span><picture><source srcset="img/products/zucchini.webp" type="image/webp"><img src="img/products/zucchini.png" alt="zucchini"></picture></span>
-	<h3>ПРОДУКТИ <br>
-		З КАБАЧКІВ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide">
-	<span><picture><source srcset="img/products/beans.webp" type="image/webp"><img src="img/products/beans.png" alt="beans"></picture></span>
-	<h3>ПРОДУКТИ <br>
-		З КВАСОЛІ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide">
-	<span><picture><source srcset="img/products/pepper.webp" type="image/webp"><img src="img/products/pepper.png" alt="pepper"></picture></span>
-	<h3>ПРОДУКТИ <br>
-		З ПЕРЦЮ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide">
-	<span><picture><source srcset="img/products/fruits.webp" type="image/webp"><img src="img/products/fruits.png" alt="fruits"></picture></span>
-	<h3>ПРОДУКТИ <br>
-		З ФРУКТІВ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide products__item_v2">
-	<span><picture><source srcset="img/products/meat.webp" type="image/webp"><img src="img/products/meat.png" alt="meat"></picture></span>
-	<h3>М’ЯСНІ <br>
-		ПРОДУКТИ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide products__item_v2">
-	<span><picture><source srcset="img/products/porridges.webp" type="image/webp"><img src="img/products/porridges.png" alt="porridges"></picture></span>
-	<h3>КАШІ</h3>
-</a>
-<a href="product.html" class="products__item swiper-slide products__item_v2">
-	<span><picture><source srcset="img/products/horeca.webp" type="image/webp"><img src="img/products/horeca.png" alt="horeca"></picture></span>
-	<h3>HoReCa</h3>
-</a>
+</a> -->
 <a href="product.html" class="products__item swiper-slide">
 	<span><picture><source srcset="img/products/sauces.webp" type="image/webp"><img src="img/products/sauces.png" alt="sauces"></picture></span>
 	<h3>СОУСИ</h3>
@@ -792,6 +693,30 @@
 	</div>
 </section>
 
+			<section class="seo-text">
+				<div class="container">
+					<div class="seo-text__wrap">
+						<h2 class="seo-text__title"><strong>Ми диджиталізуємо бізнеси, створюємо екосистеми</strong></h2>
+						<div class="seo-text__text">
+							<p>Нові технології – це не самоціль, й не прогрес заради прогресу. Вони мають робити наше життя кращим,
+								дарувати нові можливості, розкривати творчий потенціал людини. <br>
+								Місія IT компанії WEZOM – трансформувати бізнес за допомогою технологій, надавати йому інструменти для
+								сталого зростання.
+							</p>
+							<p>Економіка майбутнього буде насамперед цифровою, а отже, інвестування у діджитал бізнес вже ніяк не
+								уникнути. Питання лише в тому, як отримати з цих інвестицій максимальну</p>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi est perferendis quisquam corrupti
+								laboriosam facilis dolorum eum aspernatur reprehenderit aut?</p>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi est perferendis quisquam corrupti
+								laboriosam facilis dolorum eum aspernatur reprehenderit aut?or sit amet consectetur adipisicing elit.
+								Modi est perferendis quisquam corrupti
+								laboriosam facilis dolorum eum aspernatur reprehenderit aut?</p>
+						</div>
+						<button class="seo-text__btn-more">Розгорнути</button>
+					</div>
+				</div>
+			</section>
+
 		</main>
 
 		<footer class="footer">
@@ -868,6 +793,13 @@
 </div>
 
 
+	<!-- <script>
+		window.addEventListener("beforeunload", function () {
+			document.documentElement.style.scrollBehavior = 'auto';
+			document.documentElement.scrollTop = 0;
+			document.documentElement.style.scrollBehavior = 'smooth';
+		});
+	</script> -->
 	<script src="js/app.js"></script>
 	<script src="libs/swiper/swiper-bundle.min.js"></script>
 	<script src="js/sliders.js"></script>
@@ -875,27 +807,7 @@
 	<script src="libs/gsap/ScrollTrigger.min.js"></script>
 	<script src="js/animations.js"></script>
 	<script src="js/popups.js"></script>
-	<script>
-		const video = document.querySelector('.hero__video')
-		const heroBg = document.querySelector('.hero__bg-img-1')
-
-		document.addEventListener("DOMContentLoaded", function () {
-			let widthWindow = document.body.clientWidth
-			if (widthWindow > 768) {
-				heroBg.style.background = 'none'
-				video.play();
-			}
-		});
-
-		document.addEventListener('DOMContentLoaded', function () {
-			document.body.style.overflow = 'hidden'
-
-			setTimeout(function () {
-				document.body.style.overflow = ''
-			}, 5000)
-		})
-
-	</script>
+	<script src="js/home.js"></script>
 </body>
 
 </html>

@@ -130,3 +130,17 @@ testWebP(function (support) {
     document.querySelector('html').classList.add('no-webp')
   }
 })
+
+// --logo light
+
+if (widthWindow > 768) {
+  const logo = document.querySelector('.header__logo')
+  const preloader = document.querySelector('.preloader')
+
+  logo.addEventListener('mouseenter', () => {
+    preloader.classList.add('hover')
+  })
+  logo.addEventListener('mouseleave', () => {
+    preloader.classList.remove('hover')
+  })
+}
