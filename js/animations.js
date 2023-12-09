@@ -317,7 +317,7 @@ function startPreloader() {
     scale: sizeLogoForm,
   })
   gsap.set(
-    '.logo-animated .svg-letter, .logo-animated .subtitle, .preloader p, .preloader h1, #bg-black, #bg-gold, .hero__products',
+    '.logo-animated .svg-letter, .subtitle, .preloader p, .preloader h1, #bg-black, #bg-gold, .hero__products',
     {
       opacity: 0,
     }
@@ -378,11 +378,8 @@ function startPreloader() {
       delay: 0.1,
       onComplete: function () {
         body.classList.remove('lock')
+        document.querySelector('.preloader').classList.add('anim-done')
       },
     })
 }
-// startPreloader()
-
-gsap.set('#bg-black', {
-  scale: 2,
-})
+startPreloader()

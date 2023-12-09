@@ -326,6 +326,10 @@ video {
   pointer-events: none;
 }
 
+.preloader.anim-done {
+  z-index: 91;
+}
+
 .preloader svg {
   position: absolute;
   left: 50%;
@@ -371,7 +375,7 @@ video {
   height: 6.5vw;
 }
 
-.preloader.hover .preloader__logo-light {
+.preloader.hover.anim-done .preloader__logo-light {
   -webkit-animation: moveLogoLight 2.4s linear;
           animation: moveLogoLight 2.4s linear;
 }
@@ -396,11 +400,12 @@ video {
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-filter: blur(6px);
-          filter: blur(6px);
+  -webkit-filter: blur(0.33rem);
+          filter: blur(0.33rem);
   z-index: 6;
   mix-blend-mode: screen;
-  scale: 0.9;
+  scale: 0.65;
+  opacity: 0.8;
 }
 
 .preloader__logo-light span:nth-child(odd) {
@@ -410,10 +415,15 @@ video {
 
 @-webkit-keyframes moveLogoLight {
   0% {
+    scale: 0.8;
     opacity: 1;
     left: 45%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
+  }
+
+  15% {
+    scale: 1;
   }
 
   40% {
@@ -429,26 +439,38 @@ video {
   }
 
   85% {
+    left: 82%;
+    -webkit-transform: translateY(330%);
+            transform: translateY(330%);
+    opacity: 1;
+  }
+
+  92% {
     left: 78%;
-    -webkit-transform: translateY(310%);
-            transform: translateY(310%);
+    -webkit-transform: translateY(330%);
+            transform: translateY(330%);
     opacity: 1;
   }
 
   100% {
     left: 78%;
-    -webkit-transform: translateY(310%);
-            transform: translateY(310%);
+    -webkit-transform: translateY(330%);
+            transform: translateY(330%);
     opacity: 0;
   }
 }
 
 @keyframes moveLogoLight {
   0% {
+    scale: 0.8;
     opacity: 1;
     left: 45%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
+  }
+
+  15% {
+    scale: 1;
   }
 
   40% {
@@ -464,16 +486,23 @@ video {
   }
 
   85% {
+    left: 82%;
+    -webkit-transform: translateY(330%);
+            transform: translateY(330%);
+    opacity: 1;
+  }
+
+  92% {
     left: 78%;
-    -webkit-transform: translateY(310%);
-            transform: translateY(310%);
+    -webkit-transform: translateY(330%);
+            transform: translateY(330%);
     opacity: 1;
   }
 
   100% {
     left: 78%;
-    -webkit-transform: translateY(310%);
-            transform: translateY(310%);
+    -webkit-transform: translateY(330%);
+            transform: translateY(330%);
     opacity: 0;
   }
 }
@@ -2559,7 +2588,7 @@ video {
 
   .preloader {
     padding-top: 34.7vw;
-    z-index: 91;
+    z-index: 119;
   }
 
   .preloader.fixed {

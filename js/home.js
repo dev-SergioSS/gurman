@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', function () {
   videoProcess.play()
 })
 
-// document.addEventListener('DOMContentLoaded', function () {
-//   document.body.style.overflow = 'hidden'
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.style.overflow = 'hidden'
 
-//   setTimeout(function () {
-//     document.body.style.overflow = ''
-//   }, 5000)
-// })
+  setTimeout(function () {
+    document.body.style.overflow = ''
+  }, 5000)
+})
 
 // -- seo text
 
