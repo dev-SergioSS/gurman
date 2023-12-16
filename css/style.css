@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,regular,600,700,600italic,700italic);
 
 @font-face {
@@ -1900,7 +1902,9 @@ video {
   align-items: center;
   position: relative;
   left: -2.5vw;
-  will-change: scale;
+  will-change: transform, opacity, filter, scale;
+  /* Додано 'scale' */
+  transition: all 0.3s ease 0s !important;
 }
 
 .no-webp .products__item span {
@@ -1937,7 +1941,9 @@ video {
 }
 
 .products__item.products__item_v2 img {
-  scale: 0.88;
+  -webkit-transform: scale(0.88);
+          transform: scale(0.88);
+  /* Змінено 'scale' */
   -webkit-transform-origin: center bottom;
           transform-origin: center bottom;
 }
@@ -1948,7 +1954,9 @@ video {
 }
 
 .products__item.products__item_v2.swiper-slide-active img {
-  scale: 0.9;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  /* Змінено 'scale' */
 }
 
 .products__item.no-shadow span {
@@ -2519,10 +2527,6 @@ video {
 
   .menu__link:active:after {
     opacity: 0;
-  }
-
-  .products__item {
-    transition: scale 0.3s ease 0s !important;
   }
 
   .products__item:hover {
@@ -3544,10 +3548,10 @@ video {
 
   .products__item {
     left: 0;
-    opacity: 0.59;
-    -webkit-filter: blur(3.32px);
-            filter: blur(3.32px);
-    transition: all 0.7s ease 0s !important;
+    opacity: 0.6;
+    -webkit-filter: blur(3px);
+            filter: blur(3px);
+    transition: all 0.6s ease 0s;
   }
 
   .products__item span {
@@ -3556,6 +3560,7 @@ video {
 
   .products__item img {
     height: 73.6vw;
+    transition: all 0.4s ease 0s;
   }
 
   .products__item h3 {

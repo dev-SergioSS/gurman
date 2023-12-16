@@ -53,7 +53,6 @@ let productsSlider = new Swiper('.products__slider', {
   slidesPerGroup: 1,
   speed: 700,
   loop: true,
-  // loopAdditionalSlides: 11,
   on: {
     slideChange: function () {
       this.slides.forEach((slide) => {
