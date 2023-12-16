@@ -1955,7 +1955,7 @@ video {
 }
 
 .products__item.no-shadow span {
-  opacity: 0 !important;
+  background: none !important;
 }
 
 .products__item.swiper-slide-active {
