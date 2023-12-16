@@ -16,7 +16,7 @@ btnsMenu.forEach((btn) =>
 )
 
 for (link of menuLink) {
-  link.addEventListener('click', () => removeMenu)
+  link.addEventListener('click', () => removeMenu())
 }
 
 function lockBodyScroll(action) {

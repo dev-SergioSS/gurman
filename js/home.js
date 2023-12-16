@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
   document.body.style.overflow = 'hidden'
-
   setTimeout(function () {
     document.body.style.overflow = ''
   }, 5000)
@@ -19,8 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // -- seo text
 
 const seoBtnMore = document.querySelector('.seo-text__btn-more')
-const seoText = document.querySelector('.seo-text__text')
+const seoTextWrap = document.querySelector('.seo-text')
 seoBtnMore.addEventListener('click', () => {
-  seoText.classList.add('show-all')
-  seoBtnMore.style.display = 'none'
+  seoTextWrap.classList.toggle('show-all')
 })

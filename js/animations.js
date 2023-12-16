@@ -59,7 +59,7 @@ let delayBenefits = 0.1
 
 if (widthWindow > 768) {
   startBenefits = 'top 50%'
-  delayBenefits = 0.6
+  delayBenefits = 0.2
 }
 
 gsap.set('.benefits__items li', { opacity: 0 })
@@ -85,7 +85,7 @@ gsap.from('.benefits__title', {
   },
 })
 
-//  ----- target
+//  ----- target opacity
 
 let startText = '70%'
 let durationText = 0.65
@@ -123,8 +123,6 @@ if (widthWindow > 768) {
       trigger: '.target__media',
       start: 'top 50%',
     },
-    // opacity: 0.01,
-    // duration: 0,
     onComplete: function () {
       targetImg4.play()
       targetImg5.play()
@@ -207,8 +205,6 @@ if (widthWindow > 768) {
       trigger: '.history__media',
       start: 'top 50%',
     },
-    opacity: 0,
-    duration: 0.01,
     onComplete: function () {
       historyImg1.play()
       historyImg2.play()
@@ -218,21 +214,24 @@ if (widthWindow > 768) {
 
   let historyImg1 = gsap.from('.history__img_1', {
     paused: true,
-    duration: 0.72,
+    duration: 1.02,
     yPercent: -100,
+    opacity: 0,
     ease: 'power1.out',
   })
   let historyImg2 = gsap.from('.history__img_2', {
     paused: true,
-    duration: 0.7,
+    duration: 1,
     ease: 'power1.out',
     yPercent: -100,
+    opacity: 0,
   })
   let historyImg3 = gsap.from('.history__img_3', {
     paused: true,
-    duration: 0.71,
+    duration: 1.01,
     ease: 'power1.out',
     yPercent: -100,
+    opacity: 0,
   })
 }
 
@@ -305,11 +304,16 @@ const partnershipObj3 = gsap.from(
 
 // ----- preloader
 let sizeLogoForm = 25
-let durationLogoForm = 1
+let durationLogoForm = 0.5
+let durationSvgLetter = 0.3
+let durationSubtitle = 0.28
+let duration = 0.28
 
 if (widthWindow > 768) {
   sizeLogoForm = 30
   durationLogoForm = 1.5
+  durationSvgLetter = 0.4
+  durationSubtitle = 0.4
 }
 
 function startPreloader() {
@@ -328,11 +332,11 @@ function startPreloader() {
     .to('.logo-animated .svg-letter', {
       opacity: 1,
       stagger: 0.3,
-      duration: 0.4,
+      duration: durationSvgLetter,
     })
     .to('.logo-animated .subtitle', {
       opacity: 1,
-      duration: 0.4,
+      duration: durationSubtitle,
     })
     .fromTo(
       '.preloader p',
@@ -378,7 +382,7 @@ function startPreloader() {
       delay: 0.1,
       onComplete: function () {
         body.classList.remove('lock')
-        document.querySelector('.preloader').classList.add('anim-done')
+        document.querySelector('.preloader').classList.add('layer-downgrade')
       },
     })
 }

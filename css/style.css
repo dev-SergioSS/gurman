@@ -326,7 +326,7 @@ video {
   pointer-events: none;
 }
 
-.preloader.anim-done {
+.preloader.layer-downgrade {
   z-index: 91;
 }
 
@@ -375,7 +375,7 @@ video {
   height: 6.5vw;
 }
 
-.preloader.hover.anim-done .preloader__logo-light {
+.preloader.hover.layer-downgrade .preloader__logo-light {
   -webkit-animation: moveLogoLight 2.4s linear;
           animation: moveLogoLight 2.4s linear;
 }
@@ -1640,6 +1640,25 @@ video {
   margin-bottom: -14vw;
 }
 
+.seo-text.show-all p:nth-child(n+3) {
+  display: block;
+}
+
+.seo-text.show-all .seo-text__btn-more span:first-child {
+  display: none;
+}
+
+.seo-text.show-all .seo-text__btn-more span:last-child {
+  display: block;
+}
+
+.seo-text.show-all .seo-text__btn-more::after {
+  rotate: 180deg;
+  background-position: 0 0;
+  -webkit-transform: translateY(-0.04rem);
+          transform: translateY(-0.04rem);
+}
+
 .seo-text__wrap {
   margin-right: -1vw;
 }
@@ -1663,10 +1682,6 @@ video {
   display: none;
 }
 
-.seo-text__text.show-all p:nth-child(n+3) {
-  display: block;
-}
-
 .seo-text__btn-more {
   margin-left: auto;
   font-size: 0.66rem;
@@ -1674,6 +1689,14 @@ video {
   display: flex;
   align-items: center;
   position: relative;
+}
+
+.seo-text__btn-more span:first-child {
+  display: block;
+}
+
+.seo-text__btn-more span:last-child {
+  display: none;
 }
 
 .seo-text__btn-more::before {
@@ -1762,8 +1785,8 @@ video {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(156, 205, 59);
-  opacity: 0.5;
+  background-color: #FFCA63;
+  opacity: 0.65;
 }
 
 .label-block__video {
@@ -1877,6 +1900,7 @@ video {
   align-items: center;
   position: relative;
   left: -2.5vw;
+  will-change: scale;
 }
 
 .no-webp .products__item span {
@@ -2536,6 +2560,11 @@ video {
 @media (max-width: 768px) {
   :root {
     font-size: 4.8vw;
+  }
+
+  #partnership {
+    position: relative;
+    top: -26vw;
   }
 
   html.lock {
@@ -3553,7 +3582,7 @@ video {
 
   .partnership__title {
     margin-bottom: 11.2vw;
-    font-size: 1.16rem;
+    font-size: 1.13rem;
   }
 
   .partnership__rows {
