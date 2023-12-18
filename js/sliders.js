@@ -32,14 +32,20 @@ const productsSlides = productsWrapper.querySelectorAll(
 )
 
 let clonedSlides = []
+let countCopy = 1
+let initialSlideProduct = 1
 
-for (let i = 0; i < 7; i++) {
+if (widthWindow > 768) {
+  countCopy = 7
+  initialSlideProduct = 32
+}
+
+for (let i = 0; i < countCopy; i++) {
   productsSlides.forEach(function (slide) {
     var clone = slide.cloneNode(true)
     clonedSlides.push(clone)
   })
 }
-
 clonedSlides.forEach(function (clone) {
   productsWrapper.appendChild(clone)
 })
@@ -47,7 +53,7 @@ clonedSlides.forEach(function (clone) {
 // * слайдер
 
 let productsSlider = new Swiper('.products__slider', {
-  initialSlide: 32, //1
+  initialSlide: initialSlideProduct, //1
   slidesPerView: 1.8,
   centeredSlides: true,
   slidesPerGroup: 1,
@@ -75,7 +81,7 @@ let productsSlider = new Swiper('.products__slider', {
   breakpoints: {
     768: {
       slidesPerView: 5.5,
-      initialSlide: 33, //0
+      // initialSlide: initialSlideProduct + 1, //0
       speed: 300,
     },
   },
