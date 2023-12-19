@@ -315,7 +315,7 @@
 		<main>
 			<section class="hero frame">
 				<div class="hero__bg-img hero__bg-img-1">
-					<video class="hero__video" id="myVideo" playsinline muted loop preload="none">
+					<video class="hero__video" id="myVideo" playsinline muted loop>
 						<source src="video/gurman-video.webm" type="video/webm">
 						<source src="video/gurman-video.mp4" type="video/mp4">
 						Your browser does not support the video tag.
@@ -462,12 +462,13 @@
 					</div>
 				</div>
 				<div class="label-block__video-wrap">
-					<video class="label-block__video" id="myVideo2" playsinline muted loop preload="none">
+					<video class="label-block__video" id="myVideo2" playsinline muted loop>
 						<source src="video/process.webm" type="video/webm">
 						<source src="video/process.mp4" type="video/mp4">
 						Your browser does not support the video tag.
 					</video>
 				</div>
+				<picture><source srcset="img/history/vegetable-4.webp" type="image/webp"><img src="img/history/vegetable-4.png" class="label-block__vegetable" /></picture>
 			</section>
 
 			<section class="products" id="products">
@@ -714,10 +715,12 @@
 								Modi est perferendis quisquam corrupti
 								laboriosam facilis dolorum eum aspernatur reprehenderit aut?</p>
 						</div>
-						<button class="seo-text__btn-more">
-							<span>Розгорнути</span>
-							<span>Згорнути</span>
-						</button>
+						<div class="seo-text__btn-wrap">
+							<div class="seo-text__btn-more">
+								<span>Розгорнути</span>
+								<span>Згорнути</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -783,7 +786,7 @@
 			</p>
 			<form class="form">
 				<input type="text" placeholder="Ім’я" required>
-				<input type="email" placeholder="E-mail" required>
+				<input type="email" placeholder="E-mail" required class="input-email">
 				<input type="text" placeholder="Назва компанії" required>
 				<textarea placeholder="Повідомлення"></textarea>
 				<button class="button" type="submit">НАДІСЛАТИ</button>

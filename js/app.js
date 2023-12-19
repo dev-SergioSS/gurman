@@ -83,7 +83,6 @@ inputs.forEach((el) =>
 )
 
 function validateForm() {
-  console.log(inputs)
   inputs.forEach(function (input) {
     if (input.value.trim() === '') {
       input.classList.add('error')
@@ -91,6 +90,17 @@ function validateForm() {
       input.classList.remove('error')
     }
   })
+
+  // test email
+  const inputEmail = document.querySelector('.form .input-email')
+  let email = inputEmail.value
+  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+  if (emailPattern.test(email)) {
+    inputEmail.classList.remove('error')
+  } else {
+    inputEmail.classList.add('error')
+  }
 }
 
 // --fixed logo on mobile

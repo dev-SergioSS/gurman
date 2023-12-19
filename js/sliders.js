@@ -34,10 +34,10 @@ const productsSlides = productsWrapper.querySelectorAll(
 let clonedSlides = []
 let countCopy = 1
 let initialSlideProduct = 1
+let desctopInitialSlideProduct = 33
 
 if (widthWindow > 768) {
   countCopy = 7
-  initialSlideProduct = 32
 }
 
 for (let i = 0; i < countCopy; i++) {
@@ -81,7 +81,7 @@ let productsSlider = new Swiper('.products__slider', {
   breakpoints: {
     768: {
       slidesPerView: 5.5,
-      // initialSlide: initialSlideProduct + 1, //0
+      initialSlide: desctopInitialSlideProduct,
       speed: 300,
     },
   },

@@ -3,7 +3,7 @@ const videoProcess = document.querySelector('.label-block__video')
 const heroBg = document.querySelector('.hero__bg-img-1')
 
 document.addEventListener('DOMContentLoaded', function () {
-  heroBg.style.background = 'none'
+  // heroBg.style.background = 'none'
   videoHero.play()
   videoProcess.play()
 })

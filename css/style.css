@@ -1548,7 +1548,7 @@ video {
 .history__vegetable {
   position: absolute;
   width: auto;
-  z-index: -1;
+  z-index: 10;
 }
 
 .history__vegetable_1 {
@@ -1682,13 +1682,19 @@ video {
   display: none;
 }
 
+.seo-text__btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .seo-text__btn-more {
-  margin-left: auto;
   font-size: 0.66rem;
   position: relative;
   display: flex;
   align-items: center;
   position: relative;
+  color: #000;
+  cursor: pointer;
 }
 
 .seo-text__btn-more span:first-child {
@@ -1763,6 +1769,14 @@ video {
   text-align: center;
   padding: 8vw 0;
   position: relative;
+}
+
+.label-block__vegetable {
+  position: absolute;
+  top: -32vw;
+  width: 58vw;
+  left: -15vw;
+  display: none;
 }
 
 .label-block.label-block_bg {
@@ -2114,6 +2128,7 @@ video {
   max-width: 66vw;
   margin: 0 auto;
   width: 100%;
+  justify-content: center;
 }
 
 .catalog__list_limit .catalog__item:nth-child(n+7) {
@@ -3484,6 +3499,10 @@ video {
     min-height: auto;
   }
 
+  .label-block__vegetable {
+    display: block;
+  }
+
   .label-block h2 {
     font-size: 1.6rem;
     line-height: 113%;
@@ -3790,7 +3809,7 @@ video {
   }
 
   .product__ingredients b {
-    font-style: normal;
+    font-style: normal !important;
   }
 
   .product__energy-value {
