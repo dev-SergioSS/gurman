@@ -2111,8 +2111,9 @@ video {
 }
 
 .partnership__piece-3 {
-  width: 30vw;
+  width: 43vw;
   bottom: -15vw;
+  right: -20vw;
 }
 
 .catalog {
@@ -3477,6 +3478,10 @@ video {
 
   .team__logo {
     width: 56vw;
+  }
+
+  .seo-text {
+    padding-top: 18vw;
   }
 
   .seo-text__wrap {
